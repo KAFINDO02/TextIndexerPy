@@ -16,7 +16,6 @@ def load_documents(directory_path: str) -> Dict[str, str]:
          except Exception as e:
             print(f"Erreur lors du chargement du fichier {filename} : {e}")
    
-    return documents
    
 
 
