@@ -38,6 +38,25 @@ def tokenize(text: str) -> List[str]:
 
     return tokens
 
+def preprocess_documents(documents: Dict[str, str]) -> Dict[str, List[str]]:
+    """
+    Prétraite tous les documents par tokenisation et normalisation.
+
+    Args :
+        documents : Dictionnaire associant les identifiants de documents à leur contenu brut
+
+    Returns :
+        Dictionnaire associant les identifiants de documents à des listes de tokens prétraités
+    """
+    preprocessed_docs = {}
+
+    for doc_id, content in documents.items():
+        tokens = tokenize(content)
+        preprocessed_docs[doc_id] = tokens
+
+    return preprocessed_docs
+
+
    
    
 
