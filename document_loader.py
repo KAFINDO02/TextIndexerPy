@@ -56,6 +56,39 @@ def preprocess_documents(documents: Dict[str, str]) -> Dict[str, List[str]]:
 
     return preprocessed_docs
 
+def get_token_positions(documents: Dict[str, str]) -> Dict[str, Dict[str, List[int]]]:
+    """
+    Récupère les positions de chaque token dans chaque document.
+
+    Args :
+        documents : Dictionnaire associant les identifiants de documents à leur contenu brut
+
+    Returns :
+        Dictionnaire associant les identifiants de documents à des dictionnaires associant les tokens à leurs positions
+    """
+    token_positions = {}
+
+    for doc_id, content in documents.items():
+        # Mettre en minuscules
+        content = content.lower()
+
+        # Supprimer la ponctuation
+        content = content.translate(str.maketrans('', '', string.punctuation))
+
+        # Découper en mots et suivre les positions
+        tokens = content.split()
+        positions = {}
+
+        for position, token in enumerate(tokens):
+            if token not in positions:
+                positions[token] = []
+            positions[token].append(position)
+
+        token_positions[doc_id] = positions
+
+    return token_positions
+
+
 
    
    
