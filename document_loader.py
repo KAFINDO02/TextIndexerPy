@@ -17,6 +17,27 @@ def load_documents(directory_path: str) -> Dict[str, str]:
             print(f"Erreur lors du chargement du fichier {filename} : {e}")
             
     return documents
+def tokenize(text: str) -> List[str]:
+    """
+    Découpe le texte en tokens (mots).
+
+    Args :
+        text : Texte d'entrée à tokeniser
+
+    Returns :
+        Liste de tokens
+    """
+    # Mettre en minuscules
+    text = text.lower()
+
+    # Supprimer la ponctuation
+    text = text.translate(str.maketrans('', '', string.punctuation))
+
+    # Découper en mots
+    tokens = text.split()
+
+    return tokens
+
    
    
 
