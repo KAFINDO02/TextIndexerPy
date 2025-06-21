@@ -55,9 +55,4 @@ print(results)
 • KALALA TAMBWE Esaïe 
 • KALEB KABANGE Caleb
 ## Licence
-
 Ce projet est distribué sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d’informations.
-
-## Auteur
-
-[KAFINDO02](https://github.com/KAFINDO02)
