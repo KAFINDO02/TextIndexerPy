@@ -42,10 +42,11 @@ print(results)
 
 ## Structure du projet
 -`document_loader.py`
-- `indexer.py/` : fournit des fonctionalités pour :construire un index inveré(mot->liste de document et position )
-- `main_cli.py`  
-- `retrieval.py/` 
-- `search_engine.py` 
+- `indexer.py/` : constuit un index inversé à partir de documents prétraités
+- `main_cli.py` : l'interface CLI pour TEXTINDEXERPY. fournit une interface en ligne de commande interactive pour l'application TEXTINDEXERPY 
+- `retrieval.py/` : trie et affiche les resultats de recherche
+- `search_engine.py` : implemente des algorithms d recherche l'utilisation l'index inversé
+- `stats.py`: calcul et affiche des statistiques sur les document et l'index.
 
 ## Contributeur
 • KAFINDO KASANGU Emmanuel 
