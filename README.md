@@ -1,59 +1,62 @@
 # TextIndexerPy
 
-TextIndexerPy est un projet Python destiné à l'indexation et à la recherche de texte. Ce projet propose des outils permettant de créer un index de documents textuels et d'effectuer des recherches efficaces à travers ces documents.
+TextIndexerPy est un projet Python conçu pour indexer, rechercher et analyser efficacement des textes. Il permet de traiter de grands volumes de documents et d'effectuer des recherches textuelles rapides et précises.
 
 ## Fonctionnalités
 
-- Indexation de fichiers texte.
-- Recherche rapide de mots ou d'expressions dans l'ensemble des documents indexés.
-- Interface simple à utiliser et à étendre.
+- **Indexation de texte** : Analyse et indexe automatiquement les documents pour accélérer les recherches.
+- **Recherche performante** : Permet de retrouver rapidement des documents ou des passages spécifiques grâce à des algorithmes optimisés.
+- **Analyse de texte** : Statistiques, extraction de mots-clés, et autres outils d'analyse linguistique.
+- **Support de plusieurs formats** : Prise en charge des fichiers texte courants (.txt, .md, etc.).
+- **Interface simple** : Utilisation en ligne de commande ou intégrable dans d'autres projets Python.
 
 ## Installation
 
-Clonez le dépôt puis installez les dépendances requises, le cas échéant :
+Clonez le dépôt et installez les dépendances :
 
 ```bash
 git clone https://github.com/KAFINDO02/TextIndexerPy.git
 cd TextIndexerPy
-# Installer les dépendances si un fichier requirements.txt est présent
-# pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Utilisation
 
-Exemple d’indexation et de recherche :
+Exemple d'utilisation en ligne de commande :
 
-```python
-# Exemple d'utilisation à compléter selon la structure du projet
-from textindexer import Indexer
-
-indexer = Indexer()
-indexer.index_folder("chemin/vers/les/fichiers")
-resultats = indexer.search("mot_à_chercher")
-print(resultats)
+```bash
+python text_indexer.py --index dossier_de_textes/
+python text_indexer.py --search "mot-clé"
 ```
 
-> Adapter ce bloc selon l’API réelle du projet.
+Ou dans un script Python :
+
+```python
+from textindexer import TextIndexer
+
+indexer = TextIndexer("chemin/vers/dossier")
+indexer.build_index()
+results = indexer.search("votre recherche")
+print(results)
+```
 
 ## Structure du projet
+-`document_loader.py`
+- `indexer.py/` : fournit des fonctionalités pour :construire un index inveré(mot->liste de document et position )
+- `main_cli.py`  
+- `retrieval.py/` 
+- `search_engine.py` 
 
-- document_loader.py
-- indexer.py
-- main_cli.py
-- retrieval.py
-- searh_engine
-- stat
-
-## Contributeurs
-
- - KAFINDO KASANGU Emmanuel 
- - KAJIMB KASHAL ronelle 
- - KAKUDJI NGOY Arsène 
- - KALALA TAMBWE Esaïe 
- - KALEB KABANGE Caleb
-
-
-
+## Contributeur
+• KAFINDO KASANGU Emmanuel 
+• KAJIMB KASHAL ronelle 
+• KAKUDJI NGOY Arsène 
+• KALALA TAMBWE Esaïe 
+• KALEB KABANGE Caleb
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est distribué sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d’informations.
+
+## Auteur
+
+[KAFINDO02](https://github.com/KAFINDO02)
